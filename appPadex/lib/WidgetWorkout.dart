@@ -61,7 +61,6 @@ class _WidgetSkipData extends State<WidgetSkipData>
   void initState() {
     WidgetsBinding.instance.addObserver(this);
 
-
     webViewController = WebViewController()
       ..setJavaScriptMode(JavaScriptMode.unrestricted)
       ..setBackgroundColor(const Color(0x00000000))
@@ -82,9 +81,7 @@ class _WidgetSkipData extends State<WidgetSkipData>
         ),
       )
       ..loadRequest(Uri.parse('https://www.youtube.com/embed/ml6cT4AZdqI'));
-    setState(() {
-
-    });
+    setState(() {});
 
     // if (Platform.isAndroid) WebView.platform = SurfaceAndroidWebView();
 
@@ -260,7 +257,7 @@ class _WidgetSkipData extends State<WidgetSkipData>
             children: [
               Center(
                 child: Text(
-                  "REST",
+                  "DESCANSO",
                   style: TextStyle(
                     fontSize: 50,
                     fontFamily: Constants.fontsFamily,
@@ -299,7 +296,7 @@ class _WidgetSkipData extends State<WidgetSkipData>
                       ),
                     ),
                     InkWell(
-                      child: getCustomText("SKIP", Colors.grey, 1,
+                      child: getCustomText("SALTAR", Colors.grey, 1,
                           TextAlign.start, FontWeight.bold, 28),
                       onTap: () {
                         widget._functionSkip();
@@ -312,8 +309,8 @@ class _WidgetSkipData extends State<WidgetSkipData>
           ),
           Padding(
             padding: EdgeInsets.only(left: 12),
-            child:
-                getMediumBoldText("Coming Up:", Colors.white, TextAlign.start),
+            child: getMediumBoldText(
+                "Más Adelante:", Colors.white, TextAlign.start),
           ),
           Container(
             width: double.infinity,
@@ -433,10 +430,12 @@ class _WidgetSkipData extends State<WidgetSkipData>
                                             child: Container(
                                                 width: double.infinity,
                                                 height: double.infinity,
-                                                child:webViewController==null?Container(): WebViewWidget(
-                                                  controller:
-                                                  webViewController!,
-                                                )
+                                                child: webViewController == null
+                                                    ? Container()
+                                                    : WebViewWidget(
+                                                        controller:
+                                                            webViewController!,
+                                                      )
                                                 // child: InAppWebView(
                                                 //   initialUrlRequest:
                                                 //   URLRequest(url: Uri.parse("https://www.youtube.com/embed/ml6cT4AZdqI")),
@@ -483,7 +482,7 @@ class _WidgetSkipData extends State<WidgetSkipData>
                                   textAlign: TextAlign.center,
                                 ),
                               ),
-                              getCustomText("How to perform11", Colors.black, 1,
+                              getCustomText("Como Realizarlo", Colors.black, 1,
                                   TextAlign.start, FontWeight.w600, 18),
                               SizedBox(
                                 height: 7,
@@ -575,9 +574,7 @@ class _WidgetDetailData extends State<WidgetDetailData>
         ),
       )
       ..loadRequest(Uri.parse('https://www.youtube.com/embed/ml6cT4AZdqI'));
-    setState(() {
-
-    });
+    setState(() {});
     WidgetsBinding.instance.addObserver(this);
 
     super.initState();
@@ -604,7 +601,7 @@ class _WidgetDetailData extends State<WidgetDetailData>
                     crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisSize: MainAxisSize.min,
                     children: <Widget>[
-                      getCustomText("Sound Options", Colors.black87, 1,
+                      getCustomText("Opciones de Sonido", Colors.black87, 1,
                           TextAlign.start, FontWeight.w600, 20),
                       SizedBox(
                         height: 15,
@@ -618,7 +615,7 @@ class _WidgetDetailData extends State<WidgetDetailData>
                           ),
                           Expanded(
                             child: getSmallNormalTextWithMaxLine(
-                                "Mute", Colors.black, 1),
+                                "Silencio", Colors.black, 1),
                             flex: 1,
                           ),
                           Switch(
@@ -644,7 +641,7 @@ class _WidgetDetailData extends State<WidgetDetailData>
             actions: [
               new TextButton(
                   child: Text(
-                    'SAVE',
+                    'GUARDAR',
                     style: TextStyle(
                         fontFamily: Constants.fontsFamily,
                         fontSize: 15,
@@ -661,7 +658,7 @@ class _WidgetDetailData extends State<WidgetDetailData>
 
   @override
   void didChangeAppLifecycleState(AppLifecycleState state) {
-    print('state = $state');
+    print('Estado = $state');
     if (state == AppLifecycleState.paused) {
       if (_timer != null) {
         pauseTimer();
@@ -783,10 +780,13 @@ class _WidgetDetailData extends State<WidgetDetailData>
                             child: Container(
                               width: double.infinity,
                               height: double.infinity,
-                              child: webViewController==null?Container():WebViewWidget(controller: webViewController!,
-                                // initialUrl:
-                                //     'https://www.youtube.com/embed/ml6cT4AZdqI',
-                              ),
+                              child: webViewController == null
+                                  ? Container()
+                                  : WebViewWidget(
+                                      controller: webViewController!,
+                                      // initialUrl:
+                                      //     'https://www.youtube.com/embed/ml6cT4AZdqI',
+                                    ),
                               // child: InAppWebView(
                               //   initialUrlRequest:
                               //   URLRequest(url: Uri.parse("https://www.youtube.com/embed/ml6cT4AZdqI")),
@@ -833,7 +833,7 @@ class _WidgetDetailData extends State<WidgetDetailData>
                   textAlign: TextAlign.center,
                 ),
               ),
-              getCustomText("How to perform", Colors.black, 1, TextAlign.start,
+              getCustomText("Como Realizarlo", Colors.black, 1, TextAlign.start,
                   FontWeight.w600, 18),
               SizedBox(
                 height: 7,
@@ -1111,7 +1111,7 @@ class _WidgetWorkout extends State<WidgetWorkout> {
                   if (snapshot.hasData) {
                     ModelExerciseDetail _modelExerciseDetail = snapshot.data!;
                     if (isSkip) {
-                      _speak("Take a rest");
+                      _speak("Toma un Descanso");
                       return WidgetSkipData(
                           _modelExerciseDetail,
                           widget._modelExerciseList[pos],
@@ -1313,7 +1313,7 @@ class _WidgetWorkout extends State<WidgetWorkout> {
                                                     10, 4, 4, 4),
                                                 child:
                                                     getSmallBoldTextWithMaxLine(
-                                                        "Continue",
+                                                        "Continuar",
                                                         Colors.white,
                                                         1),
                                               ),
@@ -1347,8 +1347,8 @@ class _WidgetWorkout extends State<WidgetWorkout> {
             return WillPopScope(
               onWillPop: () async => false,
               child: AlertDialog(
-                title: Text('Exit'),
-                content: Text('Do you really want to quite?'),
+                title: Text('Salir'),
+                content: Text('Realmente quieres renunciar?'),
                 actions: <Widget>[
                   TextButton(
                     onPressed: () {
@@ -1356,7 +1356,7 @@ class _WidgetWorkout extends State<WidgetWorkout> {
                       Navigator.of(context).pop();
                     },
                     child:
-                        getSmallNormalText("YES", Colors.red, TextAlign.start),
+                        getSmallNormalText("SI", Colors.red, TextAlign.start),
                   ),
                   TextButton(
                     onPressed: () {

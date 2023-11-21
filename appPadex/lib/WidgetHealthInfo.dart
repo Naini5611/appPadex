@@ -10,7 +10,7 @@ class HealthInfo extends StatefulWidget {
 }
 
 class _HealthInfo extends State<HealthInfo> {
-  String selectedGender = "Female";
+  String selectedGender = "Femenino";
   String weight = "50";
   String height = "100";
   var myController = TextEditingController();
@@ -46,13 +46,8 @@ class _HealthInfo extends State<HealthInfo> {
                 onPressed: () {
                   onBackClicked();
                 }),
-            title: getCustomText(
-                "Your Health Information",
-                accentColor,
-                1,
-                TextAlign.start,
-                FontWeight.w500,
-                20),
+            title: getCustomText("Información sobre tu salud", accentColor, 1,
+                TextAlign.start, FontWeight.w500, 20),
           ),
           body: Container(
               height: double.infinity,
@@ -62,10 +57,10 @@ class _HealthInfo extends State<HealthInfo> {
                 scrollDirection: Axis.vertical,
                 shrinkWrap: true,
                 children: [
-                  getMultiLineText("Gender", selectedGender, () {
+                  getMultiLineText("Genero", selectedGender, () {
                     showGenderSelectionDialog(context);
                   }),
-                  getMultiLineText("Date of Birth", selectedDate, () async {
+                  getMultiLineText("Dia de nacimiento", selectedDate, () async {
                     final DateTime? picked = await showDatePicker(
                       context: context,
                       initialDate: DateTime.now(), // Refer step 1
@@ -79,11 +74,11 @@ class _HealthInfo extends State<HealthInfo> {
                         selectedDate = Constants.addDateFormat.format(picked);
                       });
                   }),
-                  getMultiLineText("Weight", weight, () {
+                  getMultiLineText("Peso", weight, () {
                     myController.text = weight;
                     showWeightKGDialog(true, context);
                   }),
-                  getMultiLineText("Height", height, () {
+                  getMultiLineText("Altura", height, () {
                     myController.text = height;
                     showWeightKGDialog(false, context);
                   }),
@@ -97,7 +92,7 @@ class _HealthInfo extends State<HealthInfo> {
   }
 
   void showGenderSelectionDialog(BuildContext contexts) async {
-    List<String> ringTone = ['Female', 'Male'];
+    List<String> ringTone = ['Femenino', 'Masculino'];
     int _currentIndex = ringTone.indexOf(selectedGender);
 
     return showDialog(
@@ -107,7 +102,7 @@ class _HealthInfo extends State<HealthInfo> {
           builder: (context, setState) {
             return AlertDialog(
               title: getMediumBoldTextWithMaxLine(
-                  "Select Gender", Colors.black87, 1),
+                  "Selecciona Genero", Colors.black87, 1),
               content: Container(
                 width: 300,
                 height: 100,
@@ -153,7 +148,7 @@ class _HealthInfo extends State<HealthInfo> {
           builder: (context, setState) {
             return AlertDialog(
               title: getMediumBoldTextWithMaxLine(
-                  isWeight ? "Select weight" : "Select Height",
+                  isWeight ? "Seleccionar peso" : "Seleccionar altura",
                   Colors.black87,
                   1),
               content: Container(
@@ -166,7 +161,7 @@ class _HealthInfo extends State<HealthInfo> {
                   mainAxisSize: MainAxisSize.min,
                   children: <Widget>[
                     getCustomText(
-                        isWeight ? "Enter Weight" : "Enter Height",
+                        isWeight ? "Ingresa el peso" : "Ingresa el peso",
                         Colors.black87,
                         1,
                         TextAlign.start,
@@ -213,7 +208,7 @@ class _HealthInfo extends State<HealthInfo> {
               actions: [
                 new TextButton(
                     child: Text(
-                      'CANCEL',
+                      'CANCELAR',
                       style: TextStyle(
                           fontFamily: Constants.fontsFamily,
                           fontSize: 15,
@@ -224,11 +219,10 @@ class _HealthInfo extends State<HealthInfo> {
                       Navigator.pop(context);
                     }),
                 new TextButton(
-                    style: ButtonStyle(backgroundColor: MaterialStateProperty.all(lightPink)),
-
-
+                    style: ButtonStyle(
+                        backgroundColor: MaterialStateProperty.all(lightPink)),
                     child: Text(
-                      'SUBMIT',
+                      'INGRESAR',
                       style: TextStyle(
                           fontFamily: Constants.fontsFamily,
                           fontSize: 15,
@@ -246,7 +240,7 @@ class _HealthInfo extends State<HealthInfo> {
                           Navigator.pop(context, height);
                         }
                       } else {
-                        print("getWeight===$weight");
+                        print("Recibir Peso===$weight");
                         Navigator.pop(context, "");
                       }
                     }),

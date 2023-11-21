@@ -73,7 +73,7 @@ class _MyHomeApp extends State<MyHomeApp> {
       localizationsDelegates: [S.delegate],
       supportedLocales: S.delegate.supportedLocales,
       // locale: new Locale(setLocals, ''),
-      title: 'Flutter Demo',
+      title: '',
       theme: themeData,
       // home: IntroScreen(),
       home: HomeWidget(0),

@@ -1,8 +1,5 @@
 import 'dart:collection';
 
-
-
-
 class ModelChallengesMainCat {
   int? id;
   int? weeks;

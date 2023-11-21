@@ -100,7 +100,7 @@ class _TabSettings extends State<TabSettings> {
     // var dialogWidth=MediaQuery.of(context).size.width-50;
     var checkDialogWidth = dialogWidth - 30;
     List<String> selectedList = [];
-    List<String> daysList = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+    List<String> daysList = ["Dom", "Lun", "Mar", "X", "Jue", "Vie", "Sab"];
     return showDialog(
         context: context,
         useSafeArea: true,
@@ -122,7 +122,7 @@ class _TabSettings extends State<TabSettings> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisSize: MainAxisSize.min,
                     children: <Widget>[
-                      getCustomText("Set Workout Reminder", Colors.black, 1,
+                      getCustomText("Poner Recordatorio", Colors.black, 1,
                           TextAlign.start, FontWeight.normal, 20),
                       SizedBox(
                         height: 15,
@@ -205,9 +205,8 @@ class _TabSettings extends State<TabSettings> {
                 ),
                 actions: [
                   new TextButton(
-
                       child: Text(
-                        'CANCEL',
+                        'CANCELAR',
                         style: TextStyle(
                             fontFamily: Constants.fontsFamily,
                             fontSize: 15,
@@ -218,8 +217,9 @@ class _TabSettings extends State<TabSettings> {
                         Navigator.pop(context);
                       }),
                   new TextButton(
-                      style: ButtonStyle(backgroundColor: MaterialStateProperty.all(lightPink)),
-
+                      style: ButtonStyle(
+                          backgroundColor:
+                              MaterialStateProperty.all(lightPink)),
                       child: Text(
                         'OK',
                         style: TextStyle(
@@ -258,7 +258,7 @@ class _TabSettings extends State<TabSettings> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisSize: MainAxisSize.min,
                     children: <Widget>[
-                      getCustomText("Set Your Daily Goal", Colors.black87, 1,
+                      getCustomText("Pon Tu Meta Diaria", Colors.black87, 1,
                           TextAlign.start, FontWeight.w600, 20),
                       SizedBox(
                         height: 15,
@@ -273,7 +273,7 @@ class _TabSettings extends State<TabSettings> {
                               cursorColor: accentColor,
                               decoration: InputDecoration(
                                   errorText: !isValidate
-                                      ? "kcal cannot be smaller than ${myController.text}?"
+                                      ? "kcal no puede ser menor a ${myController.text}?"
                                       : null,
                                   enabledBorder: UnderlineInputBorder(
                                     borderSide: BorderSide(color: accentColor),
@@ -304,27 +304,26 @@ class _TabSettings extends State<TabSettings> {
                 actions: [
                   new TextButton(
                       child: Text(
-                        'CANCEL',
+                        'CANCELAR',
                         style: TextStyle(
                             fontFamily: Constants.fontsFamily,
                             fontSize: 15,
                             color: accentColor,
                             fontWeight: FontWeight.normal),
                       ),
-
                       onPressed: () {
                         Navigator.pop(context);
                       }),
                   new TextButton(
-
-                      style: ButtonStyle(backgroundColor: MaterialStateProperty.all(lightPink)),
-
+                      style: ButtonStyle(
+                          backgroundColor:
+                              MaterialStateProperty.all(lightPink)),
                       child: Text(
-                        'SUBMIT',
+                        'AGREGAR',
                         style: TextStyle(
                             fontFamily: Constants.fontsFamily,
                             fontSize: 15,
-                            color: accentColor ,
+                            color: accentColor,
                             fontWeight: FontWeight.normal),
                       ),
                       onPressed: () {
@@ -353,7 +352,6 @@ class _TabSettings extends State<TabSettings> {
   }
 
   Future<void> share() async {
-
     // Share.share( S.of(context).app_name, subject: 'https://flutter.dev/');
   }
 
@@ -377,7 +375,7 @@ class _TabSettings extends State<TabSettings> {
                 children: [
                   Expanded(
                     child: getSettingSingleLineText(
-                        Icons.free_breakfast_outlined, "Training Rest"),
+                        Icons.free_breakfast_outlined, "Descansos"),
                     flex: 1,
                   ),
                   DropdownButton<String>(
@@ -390,7 +388,7 @@ class _TabSettings extends State<TabSettings> {
                     elevation: 16,
                     style: TextStyle(
                         color: blueButton,
-                        fontSize:  17 ,
+                        fontSize: 17,
                         fontFamily: Constants.fontsFamily),
                     underline: Container(
                       height: 2,
@@ -418,7 +416,7 @@ class _TabSettings extends State<TabSettings> {
                 children: [
                   Expanded(
                     child: getSettingSingleLineText(
-                        Icons.adjust_outlined, "Daily Goal"),
+                        Icons.adjust_outlined, "Meta Diaria"),
                     flex: 1,
                   ),
                   getCustomText("${myController.text} kcal", blueButton, 1,
@@ -437,7 +435,7 @@ class _TabSettings extends State<TabSettings> {
                 children: [
                   Expanded(
                     child: getSettingSingleLineText(
-                        Icons.volume_up_rounded, "Sound Options"),
+                        Icons.volume_up_rounded, "Opciones de Sonido"),
                     flex: 1,
                   ),
                 ],
@@ -465,8 +463,13 @@ class _TabSettings extends State<TabSettings> {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               mainAxisSize: MainAxisSize.min,
                               children: <Widget>[
-                                getCustomText("Sound Options", Colors.black87,
-                                    1, TextAlign.start, FontWeight.w600, 20),
+                                getCustomText(
+                                    "Opciones de Sonido",
+                                    Colors.black87,
+                                    1,
+                                    TextAlign.start,
+                                    FontWeight.w600,
+                                    20),
                                 SizedBox(
                                   height: 15,
                                 ),
@@ -479,7 +482,7 @@ class _TabSettings extends State<TabSettings> {
                                     ),
                                     Expanded(
                                       child: getSmallNormalTextWithMaxLine(
-                                          "Mute", Colors.black, 1),
+                                          "SILENCIAR", Colors.black, 1),
                                       flex: 1,
                                     ),
                                     Switch(
@@ -505,7 +508,7 @@ class _TabSettings extends State<TabSettings> {
                       actions: [
                         new TextButton(
                             child: Text(
-                              'SAVE',
+                              'GUARDAR',
                               style: TextStyle(
                                   fontFamily: Constants.fontsFamily,
                                   fontSize: 15,
@@ -531,7 +534,7 @@ class _TabSettings extends State<TabSettings> {
                 children: [
                   Expanded(
                     child: getSettingMultiLineText(
-                        Icons.alarm, "Set Workout Reminder", "5:30 AM"),
+                        Icons.alarm, "Poner Recordatorio", "5:30 AM"),
                     flex: 1,
                   ),
                 ],
@@ -548,7 +551,7 @@ class _TabSettings extends State<TabSettings> {
                 children: [
                   Expanded(
                     child: getSettingSingleLineText(
-                        Icons.add_box_outlined, "Health Info"),
+                        Icons.add_box_outlined, "Tu Información"),
                     flex: 1,
                   ),
                 ],
@@ -570,7 +573,7 @@ class _TabSettings extends State<TabSettings> {
                 children: [
                   Expanded(
                     child: getSettingMultiLineText(Icons.ac_unit,
-                        "Change Unit System", "Meters and Kilograms"),
+                        "Cambiar sistema de Unidades", "Metros y Kilogramos"),
                     flex: 1,
                   ),
                 ],
@@ -587,7 +590,8 @@ class _TabSettings extends State<TabSettings> {
                 children: [
                   Expanded(
                     child: getSettingSingleLineText(
-                        Icons.mobile_screen_share_outlined, "Keep Screen On"),
+                        Icons.mobile_screen_share_outlined,
+                        "Mantener Pantalla Encendida"),
                     flex: 1,
                   ),
                   Switch(
@@ -608,7 +612,7 @@ class _TabSettings extends State<TabSettings> {
           ),
           Padding(
             padding: EdgeInsets.all(textMargin),
-            child: getSettingTabTitle("SUPPORT US"),
+            child: getSettingTabTitle("APOYANOS"),
           ),
           InkWell(
             child: Container(
@@ -617,7 +621,7 @@ class _TabSettings extends State<TabSettings> {
                 children: [
                   Expanded(
                     child: getSettingSingleLineText(
-                        Icons.share, "Share With Friends"),
+                        Icons.share, "Compartir con amigos"),
                     flex: 1,
                   ),
                 ],
@@ -640,7 +644,6 @@ class _TabSettings extends State<TabSettings> {
               ),
             ),
             onTap: () async {
-
               // final MailOptions mailOptions = MailOptions(
               //   body: 'a long body for the email <br> with a subset of HTML',
               //   subject: 'the Email Subject',
@@ -650,8 +653,6 @@ class _TabSettings extends State<TabSettings> {
               // );
               //
               //  await FlutterMailer.send(mailOptions);
-
-
             },
           ),
           InkWell(
@@ -660,7 +661,8 @@ class _TabSettings extends State<TabSettings> {
               child: Row(
                 children: [
                   Expanded(
-                    child: getSettingSingleLineText(Icons.star_rate, "Rate Us"),
+                    child: getSettingSingleLineText(
+                        Icons.star_rate, "Calificanos"),
                     flex: 1,
                   ),
                 ],
@@ -677,7 +679,7 @@ class _TabSettings extends State<TabSettings> {
                 children: [
                   Expanded(
                     child: getSettingSingleLineText(
-                        Icons.policy_rounded, "Privacy Policy"),
+                        Icons.policy_rounded, "Politicas de Privacidad"),
                     flex: 1,
                   ),
                 ],
@@ -703,7 +705,7 @@ _launchURL() async {
 }
 
 Future<dynamic> showUnitDialog(BuildContext contexts) async {
-  List<String> ringTone = ['Meters and kilograms', 'Pounds,Feet and inches'];
+  List<String> ringTone = ['Metros y kilogramos', 'Libras,Pies y Pulgadas'];
   int _currentIndex = 0;
 
   return showDialog(
@@ -713,7 +715,7 @@ Future<dynamic> showUnitDialog(BuildContext contexts) async {
         builder: (context, setState) {
           return AlertDialog(
             title: getMediumBoldTextWithMaxLine(
-                "Change Unit System", Colors.black87, 1),
+                "Cambiar sistema de Medidas", Colors.black87, 1),
             content: Container(
               width: 400,
               height: 100,
@@ -762,7 +764,7 @@ class _TabHome extends State<TabHome> with TickerProviderStateMixin {
   AnimationController? animationController;
   int getCal = 0;
   int getTotalWorkout = 0;
-  List priceList=[];
+  List priceList = [];
   int getTime = 0;
   double listLength = 1;
 
@@ -802,15 +804,13 @@ class _TabHome extends State<TabHome> with TickerProviderStateMixin {
     // TODO: implement dispose
     animationController!.dispose();
     super.dispose();
-
-
   }
 
   @override
   Widget build(BuildContext context) {
     SizeConfig().init(context);
     double sliderHeight = SizeConfig.safeBlockVertical! * 35;
-    int interval =  challengesList.length;
+    int interval = challengesList.length;
     final Animation<double> animation =
         Tween<double>(begin: 0.0, end: 1.0).animate(
       // Tween<double>(begin: 0.0, end: 1.0).animate(
@@ -821,155 +821,149 @@ class _TabHome extends State<TabHome> with TickerProviderStateMixin {
       ),
     );
     animationController!.forward();
-    List<Widget> imageSliders =challengesList
+    List<Widget> imageSliders = challengesList
         .map((item) => Container(
-      child: Container(
-        margin: EdgeInsets.all(5),
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.all(Radius.circular(10)),
-          color: Colors.white,
-          boxShadow: [
-            BoxShadow(
-              color: Colors.grey,
-              offset: Offset(0.0, 1.0), //(x,y)
-              blurRadius: 4.0,
-            ),
-          ],
-        ),
-        child: AnimatedBuilder(
-            animation: animationController!,
-            builder: (context, child) {
-              return FadeTransition(
-                  opacity: animation,
-                  child: Transform(
-                      transform: Matrix4.translationValues(
-                          0.0, 50 * (1.0 - animation.value), 0.0),
-                      child: InkWell(
-                        onTap: () {
-                          //
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) =>
-                              new WidgetChallengesExerciseList(
-                                  item),
-                            ),
-                          );
-                        },
-                        child: Hero(
-                          tag: item.title!,
-                          child: Column(
-                            crossAxisAlignment:
-                            CrossAxisAlignment.start,
-                            children: [
-                              Expanded(
-                                child: ClipRRect(
-                                  borderRadius: BorderRadius.only(
-                                      topLeft: Radius.circular(10),
-                                      topRight:
-                                      Radius.circular(10)),
-                                  child: Stack(
-                                    children: <Widget>[
-                                      Container(
-                                        height: double.infinity,
-                                        width: double.infinity,
-                                        padding: EdgeInsets.only(
-                                            left: 12, right: 12),
-                                        decoration: BoxDecoration(
-                                          image: DecorationImage(
-                                            image: AssetImage(Constants
-                                                .assetsImagePath +
-                                                item.background!),
-                                            fit: BoxFit.cover,
+              child: Container(
+                margin: EdgeInsets.all(5),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.all(Radius.circular(10)),
+                  color: Colors.white,
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.grey,
+                      offset: Offset(0.0, 1.0), //(x,y)
+                      blurRadius: 4.0,
+                    ),
+                  ],
+                ),
+                child: AnimatedBuilder(
+                    animation: animationController!,
+                    builder: (context, child) {
+                      return FadeTransition(
+                          opacity: animation,
+                          child: Transform(
+                              transform: Matrix4.translationValues(
+                                  0.0, 50 * (1.0 - animation.value), 0.0),
+                              child: InkWell(
+                                onTap: () {
+                                  //
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) =>
+                                          new WidgetChallengesExerciseList(
+                                              item),
+                                    ),
+                                  );
+                                },
+                                child: Hero(
+                                  tag: item.title!,
+                                  child: Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Expanded(
+                                        child: ClipRRect(
+                                          borderRadius: BorderRadius.only(
+                                              topLeft: Radius.circular(10),
+                                              topRight: Radius.circular(10)),
+                                          child: Stack(
+                                            children: <Widget>[
+                                              Container(
+                                                height: double.infinity,
+                                                width: double.infinity,
+                                                padding: EdgeInsets.only(
+                                                    left: 12, right: 12),
+                                                decoration: BoxDecoration(
+                                                  image: DecorationImage(
+                                                    image: AssetImage(Constants
+                                                            .assetsImagePath +
+                                                        item.background!),
+                                                    fit: BoxFit.cover,
+                                                  ),
+                                                  // borderRadius: BorderRadius.all(
+                                                  //     Radius.circular(10)
+                                                  // ),
+                                                  // color: Colors.green,
+                                                ),
+                                                child: Image.asset(
+                                                  Constants.assetsImagePath +
+                                                      item.image!,
+                                                  fit: BoxFit.scaleDown,
+                                                ),
+                                              ),
+                                              Positioned(
+                                                bottom: 0.0,
+                                                left: 0.0,
+                                                right: 0.0,
+                                                child: Container(
+                                                  padding: EdgeInsets.symmetric(
+                                                      vertical: 10.0,
+                                                      horizontal: 20.0),
+                                                  child: Text(
+                                                    item.title!,
+                                                    // 'No. ${imgList.indexOf(item)} image',
+                                                    style: TextStyle(
+                                                      color: Colors.white,
+                                                      fontSize:
+                                                          sliderHeight * 0.070,
+                                                      fontFamily:
+                                                          Constants.fontsFamily,
+                                                      fontStyle:
+                                                          FontStyle.italic,
+                                                      // fontSize: 20.0,
+                                                      fontWeight:
+                                                          FontWeight.w800,
+                                                    ),
+                                                  ),
+                                                ),
+                                              ),
+                                            ],
                                           ),
-                                          // borderRadius: BorderRadius.all(
-                                          //     Radius.circular(10)
-                                          // ),
-                                          // color: Colors.green,
                                         ),
-                                        child: Image.asset(
-                                          Constants
-                                              .assetsImagePath +
-                                              item.image!,
-                                          fit: BoxFit.scaleDown,
-                                        ),
+                                        flex: 1,
                                       ),
-                                      Positioned(
-                                        bottom: 0.0,
-                                        left: 0.0,
-                                        right: 0.0,
-                                        child: Container(
-                                          padding:
-                                          EdgeInsets.symmetric(
-                                              vertical: 10.0,
-                                              horizontal: 20.0),
-                                          child: Text(
-                                            item.title!,
-                                            // 'No. ${imgList.indexOf(item)} image',
-                                            style: TextStyle(
-                                              color: Colors.white,
-                                              fontSize:
-                                              sliderHeight *
-                                                  0.070,
-                                              fontFamily: Constants
-                                                  .fontsFamily,
-                                              fontStyle:
-                                              FontStyle.italic,
-                                              // fontSize: 20.0,
-                                              fontWeight:
-                                              FontWeight.w800,
-                                            ),
-                                          ),
-                                        ),
-                                      ),
+                                      Padding(
+                                          padding: EdgeInsets.all(7),
+                                          child: getCustomText(
+                                              item.description!,
+                                              Colors.black,
+                                              2,
+                                              TextAlign.start,
+                                              FontWeight.normal,
+                                              14)),
+                                      Padding(
+                                          padding: EdgeInsets.only(
+                                              left: 7, right: 7, bottom: 10),
+                                          child: Row(
+                                            children: [
+                                              Expanded(
+                                                flex: 1,
+                                                child: getCustomText(
+                                                    "${item.weeks} ${S.of(context).week}",
+                                                    // "${item.weeks} Week",
+                                                    Colors.grey,
+                                                    1,
+                                                    TextAlign.start,
+                                                    FontWeight.normal,
+                                                    15),
+                                              ),
+                                              getCustomText(
+                                                  "0%",
+                                                  Colors.grey,
+                                                  1,
+                                                  TextAlign.start,
+                                                  FontWeight.normal,
+                                                  15)
+                                            ],
+                                          ))
                                     ],
                                   ),
                                 ),
-                                flex: 1,
-                              ),
-                              Padding(
-                                  padding: EdgeInsets.all(7),
-                                  child: getCustomText(
-                                      item.description!,
-                                      Colors.black,
-                                      2,
-                                      TextAlign.start,
-                                      FontWeight.normal,
-                                      14)),
-                              Padding(
-                                  padding: EdgeInsets.only(
-                                      left: 7,
-                                      right: 7,
-                                      bottom: 10),
-                                  child: Row(
-                                    children: [
-                                      Expanded(
-                                        flex: 1,
-                                        child: getCustomText(
-                                            "${item.weeks} ${S.of(context).week}",
-                                            // "${item.weeks} Week",
-                                            Colors.grey,
-                                            1,
-                                            TextAlign.start,
-                                            FontWeight.normal,
-                                            15),
-                                      ),
-                                      getCustomText(
-                                          "0%",
-                                          Colors.grey,
-                                          1,
-                                          TextAlign.start,
-                                          FontWeight.normal,
-                                          15)
-                                    ],
-                                  ))
-                            ],
-                          ),
-                        ),
-                      )));
-            }),
-      ),
-    ))
+                              )));
+                    }),
+              ),
+            ))
         .toList();
 
     double startMargin = SizeConfig.safeBlockHorizontal! * 7;
@@ -1035,7 +1029,7 @@ class _TabHome extends State<TabHome> with TickerProviderStateMixin {
               padding: EdgeInsets.all(textMargin),
               child: getTitleTexts(S.of(context).challenges)),
           CarouselSlider(
-              items: imageSliders ,
+              items: imageSliders,
               options: CarouselOptions(
                   height: sliderHeight,
                   autoPlay: false,
@@ -1082,7 +1076,8 @@ class _TabHome extends State<TabHome> with TickerProviderStateMixin {
                                             right: 12),
                                         width: double.infinity,
                                         height:
-                                            SizeConfig.safeBlockHorizontal! * 30,
+                                            SizeConfig.safeBlockHorizontal! *
+                                                30,
                                         child: Stack(
                                           children: [
                                             Padding(
@@ -1232,7 +1227,6 @@ class _TabActivity extends State<TabActivity> {
   @override
   void initState() {
     super.initState();
-
   }
 
   void showWeightHeightDialog(BuildContext contexts) async {
@@ -1243,7 +1237,7 @@ class _TabActivity extends State<TabActivity> {
           builder: (context, setState) {
             return AlertDialog(
               title: getMediumBoldTextWithMaxLine(
-                  "Enter Height and Weight", Colors.black87, 1),
+                  "Ingresa tu altura y peso", Colors.black87, 1),
               content: Container(
                 width: 300.0,
                 padding:
@@ -1253,7 +1247,7 @@ class _TabActivity extends State<TabActivity> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisSize: MainAxisSize.min,
                   children: <Widget>[
-                    getCustomText("Height", Colors.black87, 1, TextAlign.start,
+                    getCustomText("Altura", Colors.black87, 1, TextAlign.start,
                         FontWeight.w600, 20),
                     SizedBox(
                       height: 2,
@@ -1290,7 +1284,7 @@ class _TabActivity extends State<TabActivity> {
                     SizedBox(
                       height: 7,
                     ),
-                    getCustomText("Weight", Colors.black87, 1, TextAlign.start,
+                    getCustomText("Peso", Colors.black87, 1, TextAlign.start,
                         FontWeight.w600, 20),
                     SizedBox(
                       height: 2,
@@ -1330,7 +1324,7 @@ class _TabActivity extends State<TabActivity> {
               actions: [
                 new TextButton(
                     child: Text(
-                      'CANCEL',
+                      'CANCELAR',
                       style: TextStyle(
                           fontFamily: Constants.fontsFamily,
                           fontSize: 15,
@@ -1341,10 +1335,10 @@ class _TabActivity extends State<TabActivity> {
                       Navigator.pop(context);
                     }),
                 new TextButton(
-                    style: ButtonStyle(backgroundColor: MaterialStateProperty.all(lightPink)),
-
+                    style: ButtonStyle(
+                        backgroundColor: MaterialStateProperty.all(lightPink)),
                     child: Text(
-                      'CHECK',
+                      'GUARDAR',
                       style: TextStyle(
                           fontFamily: Constants.fontsFamily,
                           fontSize: 15,
@@ -1383,13 +1377,13 @@ class _TabActivity extends State<TabActivity> {
 
     double meterHeight = heightCm / 100;
     double bmiGet = weightKg / (meterHeight * meterHeight);
-    print("getbmival---$bmiGet---${(bmiGet == double.nan)}--$meterHeight--$weightKg");
-
+    print(
+        "getbmival---$bmiGet---${(bmiGet == double.nan)}--$meterHeight--$weightKg");
 
     setState(() {
-      if(bmiGet.isNaN){
-        bmi=0;
-      }else{
+      if (bmiGet.isNaN) {
+        bmi = 0;
+      } else {
         bmi = bmiGet.toInt();
       }
     });
@@ -1409,8 +1403,8 @@ class _TabActivity extends State<TabActivity> {
           Row(
             mainAxisSize: MainAxisSize.min,
             children: [
-              getSmallBoldText("Stats |", Colors.black),
-              getSmallNormalText(" Today", Colors.black, TextAlign.start),
+              getSmallBoldText("Estadisticas |", Colors.black),
+              getSmallNormalText(" HOY", Colors.black, TextAlign.start),
             ],
           ),
           new CircularPercentIndicator(
@@ -1450,7 +1444,7 @@ class _TabActivity extends State<TabActivity> {
           SizedBox(
             height: 5,
           ),
-          getMediumBoldTextWithMaxLine("Daily Goal", Colors.black, 1),
+          getMediumBoldTextWithMaxLine("Meta Diaria", Colors.black, 1),
           SizedBox(
             height: 5,
           ),
@@ -1470,7 +1464,7 @@ class _TabActivity extends State<TabActivity> {
                         width: 2,
                       ),
                       getSmallNormalText(
-                          "Workouts", Colors.black, TextAlign.start)
+                          " Entrenamientos", Colors.black, TextAlign.start)
                     ],
                   ),
                 ),
@@ -1533,7 +1527,7 @@ class _TabActivity extends State<TabActivity> {
                           Align(
                               alignment: Alignment.center,
                               child: Text(
-                                "Very Severely obese",
+                                "Obesidad Severa",
                                 style: TextStyle(
                                     color: Constants.getColorFromHex("FBC02D"),
                                     fontWeight: FontWeight.bold,
@@ -1657,13 +1651,9 @@ class _TabActivity extends State<TabActivity> {
               color: Colors.white,
             ),
             child: TableCalendar(
-
               startingDayOfWeek: StartingDayOfWeek.monday,
               calendarStyle: CalendarStyle(
                 // selectedColor: (Colors.deepOrange[400]),
-
-
-
 
                 outsideDaysVisible: false,
                 // weekdayStyle: TextStyle(
@@ -1677,7 +1667,6 @@ class _TabActivity extends State<TabActivity> {
                   borderRadius: BorderRadius.circular(16.0),
                 ),
               ),
-
 
               onDaySelected: (selectedDay, focusedDay) {
                 setState(() {
@@ -1707,7 +1696,7 @@ class _TabActivity extends State<TabActivity> {
               children: [
                 Padding(
                   padding: EdgeInsets.all(7),
-                  child: getCustomText("SUMMARY", Colors.black, 1,
+                  child: getCustomText("RESUMÉN", Colors.black, 1,
                       TextAlign.start, FontWeight.bold, 18),
                 ),
                 Align(
@@ -1725,7 +1714,7 @@ class _TabActivity extends State<TabActivity> {
                 ),
                 Row(
                   children: [
-                    getCustomText("3 Workouts", Colors.black, 1,
+                    getCustomText("3 Entrenos", Colors.black, 1,
                         TextAlign.start, FontWeight.w400, 15),
                     Expanded(
                       child: RichText(
@@ -1919,7 +1908,7 @@ class _TabActivity extends State<TabActivity> {
                           child: Align(
                             alignment: Alignment.center,
                             child: getSmallNormalTextWithMaxLine(
-                                "No Summary", Colors.black, 1),
+                                "Sin Resumen", Colors.black, 1),
                           ));
                     }
                   },
@@ -1989,7 +1978,8 @@ class CardScrollWidget extends StatelessWidget {
               borderRadius: BorderRadius.circular(16.0),
               child: Container(
                 decoration: BoxDecoration(
-                  color: Constants.getColorFromHex(_discoverList[i].background!),
+                  color:
+                      Constants.getColorFromHex(_discoverList[i].background!),
                 ),
                 child: AspectRatio(
                   aspectRatio: cardAspectRatio,
@@ -2086,7 +2076,6 @@ class _TabDiscover extends State<TabDiscover> {
   List<ModelWorkoutList> _workoutList = [];
   List<ModelDiscover> _discoverList = [];
 
-
   void sendToWorkoutList(BuildContext context) {
     Navigator.of(context).push(MaterialPageRoute(
       builder: (context) {
@@ -2105,9 +2094,7 @@ class _TabDiscover extends State<TabDiscover> {
       setState(() {});
     });
     _dataHelper.getAllDiscoverWorkouts().then((value) {
-
-
-      if ( value.length > 0) {
+      if (value.length > 0) {
         setState(() {
           _discoverList = value;
           currentPage = _discoverList.length - 1.0;
@@ -2153,7 +2140,7 @@ class _TabDiscover extends State<TabDiscover> {
                             return InkWell(
                               onTap: () {
                                 sendToWorkoutList(context);
-                                print("tapped");
+                                print("Seleccionado");
                               },
                               child: Container(),
                             );
@@ -2370,13 +2357,8 @@ class _HomeWidget extends State<HomeWidget> {
             elevation: 0,
             automaticallyImplyLeading: false,
             backgroundColor: bgDarkWhite,
-            title: getCustomText(
-                allDestinations[_currentIndex].toolbarTitle,
-                accentColor,
-                1,
-                TextAlign.start,
-                FontWeight.w500,
-                20),
+            title: getCustomText(allDestinations[_currentIndex].toolbarTitle,
+                accentColor, 1, TextAlign.start, FontWeight.w500, 20),
           ),
           body: SafeArea(
             top: false,

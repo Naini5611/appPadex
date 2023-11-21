@@ -1,4 +1,3 @@
-
 import 'dart:io';
 
 import 'package:flutter/cupertino.dart';
@@ -44,7 +43,7 @@ class _WidgetWorkoutExerciseList extends State<WidgetWorkoutExerciseList> {
   int getCal = 0;
   int getTime = 0;
   int getTotalWorkout = 0;
-  List priceList=[];
+  List priceList = [];
   // AdmobInterstitial? interstitialAd;
 
   // InterstitialAd? _interstitialAd;
@@ -64,7 +63,6 @@ class _WidgetWorkoutExerciseList extends State<WidgetWorkoutExerciseList> {
   //         },
   //       ));
   // }
-
 
   void _showInterstitialAd() {
     Navigator.of(context).push(MaterialPageRoute(
@@ -110,8 +108,6 @@ class _WidgetWorkoutExerciseList extends State<WidgetWorkoutExerciseList> {
     // }
   }
 
-
-
   // AnimationController animationController;
   WebViewController? webViewController;
 
@@ -141,9 +137,7 @@ class _WidgetWorkoutExerciseList extends State<WidgetWorkoutExerciseList> {
           ),
         )
         ..loadRequest(Uri.parse('https://www.youtube.com/embed/ml6cT4AZdqI'));
-    setState(() {
-
-    });
+    setState(() {});
 
     _scrollViewController = new ScrollController();
     _scrollViewController!.addListener(() {
@@ -169,7 +163,7 @@ class _WidgetWorkoutExerciseList extends State<WidgetWorkoutExerciseList> {
 
   void _calcTotal() async {
     priceList = await _dataHelper.calculateTotalWorkout();
-    if ( priceList.length > 0) {
+    if (priceList.length > 0) {
       getTotalWorkout = priceList.length;
       priceList.forEach((price) {
         getCal = getCal + price['kcal'] as int;
@@ -207,7 +201,6 @@ class _WidgetWorkoutExerciseList extends State<WidgetWorkoutExerciseList> {
 
   // BannerAd? _anchoredBanner;
   // bool _loadingAnchoredBanner = false;
-
 
   // Future<void> _createAnchoredBanner(BuildContext context) async {
   //   final AnchoredAdaptiveBannerAdSize? size =
@@ -252,7 +245,6 @@ class _WidgetWorkoutExerciseList extends State<WidgetWorkoutExerciseList> {
   //   return banner.load();
   // }
 
-
   PageController controller = PageController();
   // late InAppWebViewController webView;
 
@@ -288,7 +280,7 @@ class _WidgetWorkoutExerciseList extends State<WidgetWorkoutExerciseList> {
                                 PopupMenuButton<String>(
                                   onSelected: handleClick,
                                   itemBuilder: (BuildContext context) {
-                                    return {'Share'}.map((String choice) {
+                                    return {'Compartir'}.map((String choice) {
                                       return PopupMenuItem<String>(
                                         value: choice,
                                         child: Text(choice),
@@ -460,7 +452,6 @@ class _WidgetWorkoutExerciseList extends State<WidgetWorkoutExerciseList> {
                                                       ],
                                                     ),
                                                   ),
-
                                                   flex: 1,
                                                 )
                                               ],
@@ -506,9 +497,7 @@ class _WidgetWorkoutExerciseList extends State<WidgetWorkoutExerciseList> {
                                                         _modelExerciseList
                                                             .exerciseId!),
                                                 builder: (context, snapshot) {
-
-
-                                                  if(snapshot.data==null){
+                                                  if (snapshot.data == null) {
                                                     return Container();
                                                   }
                                                   ModelExerciseDetail
@@ -566,7 +555,6 @@ class _WidgetWorkoutExerciseList extends State<WidgetWorkoutExerciseList> {
                                                                     .contain,
                                                               ),
                                                             ),
-
                                                             Expanded(
                                                               child: Column(
                                                                 mainAxisAlignment:
@@ -612,7 +600,8 @@ class _WidgetWorkoutExerciseList extends State<WidgetWorkoutExerciseList> {
                                                         ),
                                                       ),
                                                       onTap: () {
-                                                        showBottomDialog(exerciseDetail);
+                                                        showBottomDialog(
+                                                            exerciseDetail);
                                                       },
                                                     );
                                                   } else {
@@ -641,20 +630,19 @@ class _WidgetWorkoutExerciseList extends State<WidgetWorkoutExerciseList> {
                         child: Container(
                           margin: EdgeInsets.all(7),
                           width: SizeConfig.safeBlockHorizontal! * 55,
-                              child: ElevatedButton(
+                          child: ElevatedButton(
+                            style: ElevatedButton.styleFrom(
+                              // onPrimary: Colors.black87,
+                              onPrimary: greenButton,
+                              primary: greenButton,
 
-                                style: ElevatedButton.styleFrom(
-                                  // onPrimary: Colors.black87,
-                                  onPrimary: greenButton,
-                                  primary: greenButton,
-
-                                  // minimumSize: Size(88, 36),
-                                  padding: EdgeInsets.only(top: 12, bottom: 12),
-                                  shape: const RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.all(Radius.circular(7)),
-                                  ),
-                                ),
-
+                              // minimumSize: Size(88, 36),
+                              padding: EdgeInsets.only(top: 12, bottom: 12),
+                              shape: const RoundedRectangleBorder(
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(7)),
+                              ),
+                            ),
 
                             // shape: RoundedRectangleBorder(
                             //     borderRadius:
@@ -663,18 +651,19 @@ class _WidgetWorkoutExerciseList extends State<WidgetWorkoutExerciseList> {
 
                             onPressed: () async {
                               _showInterstitialAd();
-
-
                             },
 
                             // textColor: Colors.white,
                             // color: greenButton,
                             // padding: EdgeInsets.only(top: 12, bottom: 12),
 
-
-                            child: getCustomText("START WORKOUT", Colors.white,
-                                1, TextAlign.center, FontWeight.w600, 17),
-
+                            child: getCustomText(
+                                "EMPEZAR ENTRENAMIENTO",
+                                Colors.white,
+                                1,
+                                TextAlign.center,
+                                FontWeight.w600,
+                                17),
                           ),
                         ),
                       )
@@ -782,44 +771,46 @@ class _WidgetWorkoutExerciseList extends State<WidgetWorkoutExerciseList> {
                         child: Column(children: <Widget>[
                           Expanded(
                             child: Container(
-                              width: double.infinity,
-                              height: double.infinity,
-                              child: webViewController==null?Container():WebViewWidget(controller: webViewController!,
-                                // initialUrl:
-                                //     'https://www.youtube.com/embed/ml6cT4AZdqI',
-                              )
-                              // child: InAppWebView(
-                              //   initialUrlRequest:
-                              //   URLRequest(url: Uri.parse("https://www.youtube.com/embed/ml6cT4AZdqI")),
-                              //   // initialUrl:
-                              //   //     "https://www.youtube.com/embed/ml6cT4AZdqI",
-                              //
-                              //   initialOptions: InAppWebViewGroupOptions(
-                              //       crossPlatform: InAppWebViewOptions(
-                              //
-                              //   )),
-                              //   onWebViewCreated:
-                              //       (InAppWebViewController controller) {
-                              //     webView = controller;
-                              //   },
-                              //   onLoadStart: (controller, url) {
-                              //     setState(() {
-                              //
-                              //
-                              //     });
-                              //   },
-                              //
-                              //
-                              //
-                              // ),
-                            ),
+                                width: double.infinity,
+                                height: double.infinity,
+                                child: webViewController == null
+                                    ? Container()
+                                    : WebViewWidget(
+                                        controller: webViewController!,
+                                        // initialUrl:
+                                        //     'https://www.youtube.com/embed/ml6cT4AZdqI',
+                                      )
+                                // child: InAppWebView(
+                                //   initialUrlRequest:
+                                //   URLRequest(url: Uri.parse("https://www.youtube.com/embed/ml6cT4AZdqI")),
+                                //   // initialUrl:
+                                //   //     "https://www.youtube.com/embed/ml6cT4AZdqI",
+                                //
+                                //   initialOptions: InAppWebViewGroupOptions(
+                                //       crossPlatform: InAppWebViewOptions(
+                                //
+                                //   )),
+                                //   onWebViewCreated:
+                                //       (InAppWebViewController controller) {
+                                //     webView = controller;
+                                //   },
+                                //   onLoadStart: (controller, url) {
+                                //     setState(() {
+                                //
+                                //
+                                //     });
+                                //   },
+                                //
+                                //
+                                //
+                                // ),
+                                ),
                           ),
                         ]))
                     // )
                     ,
                   ],
                 ),
-
               ),
               Padding(
                 padding: EdgeInsets.all(7),
@@ -835,7 +826,7 @@ class _WidgetWorkoutExerciseList extends State<WidgetWorkoutExerciseList> {
                   textAlign: TextAlign.center,
                 ),
               ),
-              getCustomText("How to perform", Colors.black, 1, TextAlign.start,
+              getCustomText("Como Realizarlo", Colors.black, 1, TextAlign.start,
                   FontWeight.w600, 18),
               SizedBox(
                 height: 7,

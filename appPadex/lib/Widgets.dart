@@ -151,7 +151,6 @@ Widget getSettingMultiLineText(IconData icon, String string, String bottomTxt) {
   return Row(
     mainAxisAlignment: MainAxisAlignment.start,
     crossAxisAlignment: CrossAxisAlignment.center,
-
     children: [
       Icon(icon, color: Colors.black87, size: 25),
       SizedBox(

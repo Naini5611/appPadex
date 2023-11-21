@@ -53,8 +53,8 @@ class S {
   /// `Home`
   String get home {
     return Intl.message(
-      'Home',
-      name: 'home',
+      'Pantalla Principal',
+      name: 'Pantalla Principal',
       desc: '',
       args: [],
     );
@@ -63,8 +63,8 @@ class S {
   /// `Home Workouts`
   String get homeWorkouts {
     return Intl.message(
-      'Home Workouts',
-      name: 'homeWorkouts',
+      'Pantalla Entrenamientos',
+      name: 'Pantalla Entrenamientos',
       desc: '',
       args: [],
     );
@@ -73,8 +73,8 @@ class S {
   /// `Discover`
   String get discover {
     return Intl.message(
-      'Discover',
-      name: 'discover',
+      'Descubrir',
+      name: 'Descubrir',
       desc: '',
       args: [],
     );
@@ -83,8 +83,8 @@ class S {
   /// `Activity`
   String get activity {
     return Intl.message(
-      'Activity',
-      name: 'activity',
+      'Actividad',
+      name: 'Actividad',
       desc: '',
       args: [],
     );
@@ -93,8 +93,8 @@ class S {
   /// `Settings`
   String get settings {
     return Intl.message(
-      'Settings',
-      name: 'settings',
+      'Configuraciones',
+      name: 'Configuraciones',
       desc: '',
       args: [],
     );
@@ -103,8 +103,8 @@ class S {
   /// `Transformation`
   String get transformation {
     return Intl.message(
-      'Transformation',
-      name: 'transformation',
+      'Transformación',
+      name: 'Transformación',
       desc: '',
       args: [],
     );
@@ -113,8 +113,8 @@ class S {
   /// `Beginner`
   String get beginner {
     return Intl.message(
-      'Beginner',
-      name: 'beginner',
+      'Principiante',
+      name: 'Principiante',
       desc: '',
       args: [],
     );
@@ -123,8 +123,8 @@ class S {
   /// `Challenges`
   String get challenges {
     return Intl.message(
-      'Challenges',
-      name: 'challenges',
+      'Desafios',
+      name: 'Desafios',
       desc: '',
       args: [],
     );
@@ -133,8 +133,8 @@ class S {
   /// `Minutes`
   String get minutes {
     return Intl.message(
-      'Minutes',
-      name: 'minutes',
+      'Minutos',
+      name: 'Minutos',
       desc: '',
       args: [],
     );
@@ -153,8 +153,8 @@ class S {
   /// `Workouts`
   String get workouts {
     return Intl.message(
-      'Workouts',
-      name: 'workouts',
+      'Entrenamientos',
+      name: 'Entrenamientos',
       desc: '',
       args: [],
     );
@@ -163,8 +163,8 @@ class S {
   /// `Week`
   String get week {
     return Intl.message(
-      'Week',
-      name: 'week',
+      'Semana',
+      name: 'Semana',
       desc: '',
       args: [],
     );
@@ -173,8 +173,8 @@ class S {
   /// `Intermediate`
   String get intermediate {
     return Intl.message(
-      'Intermediate',
-      name: 'intermediate',
+      'Intermedio',
+      name: 'Intermedio',
       desc: '',
       args: [],
     );
@@ -183,8 +183,8 @@ class S {
   /// `Advanced`
   String get advanced {
     return Intl.message(
-      'Advanced',
-      name: 'advanced',
+      'Avanzado',
+      name: 'Avanzado',
       desc: '',
       args: [],
     );
@@ -193,8 +193,8 @@ class S {
   /// `Calories`
   String get calories {
     return Intl.message(
-      'Calories',
-      name: 'calories',
+      'Calorias',
+      name: 'Calorias',
       desc: '',
       args: [],
     );
@@ -203,8 +203,8 @@ class S {
   /// `Seconds`
   String get seconds {
     return Intl.message(
-      'Seconds',
-      name: 'seconds',
+      'Segundos',
+      name: 'Segundos',
       desc: '',
       args: [],
     );
@@ -213,8 +213,8 @@ class S {
   /// `Quick Workouts`
   String get quickWorkouts {
     return Intl.message(
-      'Quick Workouts',
-      name: 'quickWorkouts',
+      'Entrenamientos Rapidos',
+      name: 'Entrenamientos Rapidos',
       desc: '',
       args: [],
     );
@@ -223,8 +223,8 @@ class S {
   /// `Popular Workouts`
   String get popularWorkouts {
     return Intl.message(
-      'Popular Workouts',
-      name: 'popularWorkouts',
+      'Entrenamientos Populares',
+      name: 'Entrenamientos Populares',
       desc: '',
       args: [],
     );
@@ -233,8 +233,8 @@ class S {
   /// `Top Picks`
   String get topPicks {
     return Intl.message(
-      'Top Picks',
-      name: 'topPicks',
+      'Los más escogidos',
+      name: 'Los más escogidos',
       desc: '',
       args: [],
     );
@@ -243,8 +243,8 @@ class S {
   /// `Stretches`
   String get stretches {
     return Intl.message(
-      'Stretches',
-      name: 'stretches',
+      'Estiramientos',
+      name: 'Estiramientos',
       desc: '',
       args: [],
     );
@@ -253,8 +253,8 @@ class S {
   /// `GO`
   String get go {
     return Intl.message(
-      'GO',
-      name: 'go',
+      'Vamos',
+      name: 'Vamos',
       desc: '',
       args: [],
     );
@@ -263,8 +263,8 @@ class S {
   /// `Exercises`
   String get exercises {
     return Intl.message(
-      'Exercises',
-      name: 'exercises',
+      'Ejercicios',
+      name: 'Ejercicios',
       desc: '',
       args: [],
     );
@@ -273,8 +273,8 @@ class S {
   /// `WORKOUT`
   String get workout {
     return Intl.message(
-      'WORKOUT',
-      name: 'workout',
+      'Entrenamientos',
+      name: 'Entrenamientos',
       desc: '',
       args: [],
     );
@@ -283,37 +283,34 @@ class S {
   /// `Workout`
   String get app_name {
     return Intl.message(
-      'Workout',
-      name: 'app_name',
+      'PDX GYM',
+      name: 'PDX GYM',
       desc: '',
       args: [],
     );
   }
 
-  /// `Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.`
   String get intro_desc_1 {
     return Intl.message(
-      'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.',
+      'Aqui van las instrucciones por ejercicio.',
       name: 'intro_desc_1',
       desc: '',
       args: [],
     );
   }
 
-  /// `Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.`
   String get intro_desc_2 {
     return Intl.message(
-      'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.',
+      'Aqui van las instrucciones por ejercicio.',
       name: 'intro_desc_2',
       desc: '',
       args: [],
     );
   }
 
-  /// `Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.`
   String get intro_desc_3 {
     return Intl.message(
-      'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.',
+      'Aqui van las instrucciones por ejercicio.',
       name: 'intro_desc_3',
       desc: '',
       args: [],
@@ -323,8 +320,8 @@ class S {
   /// `Workout`
   String get workout_small {
     return Intl.message(
-      'Workout',
-      name: 'workout_small',
+      'Entrenamiento Rápido',
+      name: 'Entrenamiento Rápido',
       desc: '',
       args: [],
     );
@@ -333,8 +330,8 @@ class S {
   /// `Shape Your Body`
   String get shapeYourBody {
     return Intl.message(
-      'Shape Your Body',
-      name: 'shapeYourBody',
+      'Moldea tu cuerpo',
+      name: 'Moldea tu cuerpo',
       desc: '',
       args: [],
     );
@@ -343,8 +340,8 @@ class S {
   /// `build muscle, get toned, achive an athlet's body`
   String get buildMuscleGetTonedAchiveAnAthletsBody {
     return Intl.message(
-      'build muscle, get toned, achive an athlet\'s body',
-      name: 'buildMuscleGetTonedAchiveAnAthletsBody',
+      'trabajar musculos, tonificar, obtener un cuerpo atletico',
+      name: 'trabajar musculos, tonificar, obtener un cuerpo atletico',
       desc: '',
       args: [],
     );

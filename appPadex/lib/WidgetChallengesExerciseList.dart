@@ -1,11 +1,9 @@
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 
 // import 'package:google_mobile_ads/google_mobile_ads.dart';
 // import 'package:share_plus/share_plus.dart';
-
 
 import 'AdsInfo.dart';
 import 'ColorCategory.dart';
@@ -37,7 +35,7 @@ class _WidgetChallengesExerciseList
   int getCal = 0;
   int getTime = 0;
   int getTotalWorkout = 0;
-  List priceList=[];
+  List priceList = [];
 
   DataHelper _dataHelper = DataHelper.instance;
   List<ModelWorkoutList> _workoutList = [];
@@ -81,11 +79,9 @@ class _WidgetChallengesExerciseList
   //       ));
   // }
 
-
   void _showInterstitialAd() {
-
     // if(_interstitialAd == null){
-      sendToWorkoutList(context);
+    sendToWorkoutList(context);
     // }else {
     //
     //   _interstitialAd!.fullScreenContentCallback = FullScreenContentCallback(
@@ -110,7 +106,6 @@ class _WidgetChallengesExerciseList
     // }
   }
 
-
   @override
   void initState() {
     _calcTotal();
@@ -121,8 +116,6 @@ class _WidgetChallengesExerciseList
 
     super.initState();
     // _createInterstitialAd();
-
-
 
     _scrollViewController = new ScrollController();
     _scrollViewController!.addListener(() {
@@ -156,16 +149,12 @@ class _WidgetChallengesExerciseList
   }
 
   Future<void> share() async {
-
-
     // Share.share( S.of(context).app_name, subject: 'https://flutter.dev/');
-
-  
   }
 
   void handleClick(String value) {
     switch (value) {
-      case 'Share':
+      case 'COMPARTIR':
         share();
         break;
     }
@@ -541,8 +530,6 @@ class _WidgetChallengesExerciseList
                     margin: EdgeInsets.all(7),
                     width: SizeConfig.safeBlockHorizontal! * 55,
                     child: ElevatedButton(
-
-
                       style: ElevatedButton.styleFrom(
                         // onPrimary: Colors.black87,
                         onPrimary: greenButton,
@@ -557,7 +544,6 @@ class _WidgetChallengesExerciseList
                       // shape: RoundedRectangleBorder(
                       //     borderRadius: BorderRadius.all(Radius.circular(7.0))),
                       onPressed: () async {
-
                         _showInterstitialAd();
                         // if (await interstitialAd!.isLoaded) {
                         //   interstitialAd!.show();
